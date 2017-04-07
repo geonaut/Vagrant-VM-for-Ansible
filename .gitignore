@@ -1,0 +1,11 @@
+
+.vagrant/
+# exclude everything
+#webapps/*
+
+# exception to the rule
+#!webapps/.gitkeep 
+
+ubuntu-xenial-16.04-cloudimg-console.log
+
+keys/ansible_key
