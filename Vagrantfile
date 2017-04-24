@@ -1,6 +1,7 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "bento/ubuntu-16.04"
   config.vm.network "private_network", ip: "192.168.10.2"
+  # config.vm.network "public_network", ip: "192.168.1.127"
   #To use the Django webserver, forward some extra ports 
   config.vm.network "forwarded_port", guest: 8000, host: 8001
 
@@ -11,7 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Add vagrant to www-data, for access to /webapps
   config.vm.provision "shell",
-    inline: "usermod -a -G vagrant www-data"
+    inline: "usermod -a -G www-data vagrant"
 
   # ssh settings
   config.ssh.insert_key = false
